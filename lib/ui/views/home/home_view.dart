@@ -1,7 +1,10 @@
+import 'dart:ui';
+
 import 'package:all_bet_info/ui/common/app_icons.dart';
 import 'package:all_bet_info/ui/common/app_images.dart';
 import 'package:all_bet_info/ui/common/my_utils.dart';
 import 'package:all_bet_info/ui/widgets/appBars/custom_navigation_screens_appBar.dart';
+import 'package:all_bet_info/ui/widgets/appBars/widget_left_right_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +12,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stacked/stacked.dart';
 import 'package:all_bet_info/ui/common/app_colors.dart';
-import 'package:all_bet_info/ui/common/ui_helpers.dart';
 
 import 'home_viewmodel.dart';
 
@@ -26,6 +28,7 @@ class HomeView extends StackedView<HomeViewModel> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -89,7 +92,6 @@ class HomeView extends StackedView<HomeViewModel> {
                       title: 'Equity available now',
                     ),
                     21.verticalSpace,
-
                     SizedBox(
                       height: 145.h,
                       child: ListView.builder(
@@ -103,75 +105,94 @@ class HomeView extends StackedView<HomeViewModel> {
                         },
                       ),
                     ),
-
                     16.verticalSpace,
-
                     const CrumbsWidget(),
-
                     54.verticalSpace,
-
                     const RowTextWithViewAll(
                       title: 'Best Odds',
                     ),
-
                     20.verticalSpace,
-
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primaryContainer,
-                        borderRadius: BorderRadius.circular(16.r),
-                        border: Border.all(
-                          color: const Color(0xFFFFFFFF).withOpacity(0.1),
+                    const OddsDetailsCard(
+                      color: null,
+                      value: "Great Value",
+                      icon: AppIcons.icCrown,
+                      endTextcolor: AppColors.secondaryColor,
+                      title: 'High Hand Bonus',
+                      subTitle: "Lucky Aces Poke",
+                      promotion: "\$100/hr High Hand",
+                      estimatedValue: "\$3.13 EV/hr",
+                      frequency: "Every Hour",
+                      details: "Win \$100 for the highest hand shown each hour.",
+                      info: "Max 1 win per player/hour",
+                    ),
+                    15.verticalSpace,
+                    const OddsDetailsCard(
+                      color: AppColors.errorColor,
+                      value: "Poor Value",
+                      icon: AppIcons.icBadBeat,
+                      endTextcolor: AppColors.errorColor,
+                      title: 'Bad Beat Jackpot',
+                      subTitle: "Royal Flush Casino",
+                      promotion: "Bad Beat Jackpot",
+                      estimatedValue: "-\$149.50 EV/hr",
+                      frequency: "Very Rare",
+                      details: "Share a jackpot (specific requirements apply)",
+                      info: "See room for full jackpot details",
+                    ),
+                    15.verticalSpace,
+                    const OddsDetailsCard(
+                      color: AppColors.primaryColor,
+                      endTextcolor: AppColors.secondaryColor,
+                      value: "Good Value",
+                      icon: AppIcons.icCards,
+                      title: 'Hot Cards',
+                      subTitle: "Texas Hold'em Club ",
+                      promotion: "Hot Cards",
+                      estimatedValue: "\$1.45 EV/h*",
+                      frequency: "Very Rare ",
+                      details: "Get rewarded on the flop (Set, Full House, Quads)",
+                      info: "See room website for details.",
+                    ),
+                    16.verticalSpace,
+                    Align(
+                      alignment: Alignment.center,
+                      child: InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'View all',
+                          style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.primaryColor,
+                              ),
                         ),
                       ),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                AppIcons.icCrown,
-                                width: 30.w,
-                                height: 22.h,
-                              ),
-                              14.horizontalSpace,
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "High Hand Bonus",
-                                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                  ),
-                                  Text(
-                                    "Lucky Aces Poke",
-                                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                                          fontWeight: FontWeight.w400,
-                                          color: const Color(0xFFB8C0CA),
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Divider(
-                            color: const Color(0xFFFFFFFF).withOpacity(0.1),
-                          )
-                        ],
-                      ),
                     ),
-
-                    //
-
-                    ///
-                    ///
-                    ///
-                    ///
-
-                    540.verticalSpace,
                   ],
                 ),
               ),
+              60.verticalSpace,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Text(
+                  'News',
+                  style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+              ),
+              20.verticalSpace,
+
+              const NewsContainerWidget(),
+              16.verticalSpace,
+              const NewsContainerWidget(),
+              16.verticalSpace,
+              const NewsContainerWidget(),
+
+              ///
+              ///
+              ///
+              ///
+              550.verticalSpace,
             ],
           ),
         ),
@@ -184,6 +205,248 @@ class HomeView extends StackedView<HomeViewModel> {
     BuildContext context,
   ) =>
       HomeViewModel();
+}
+
+class NewsContainerWidget extends StatelessWidget {
+  const NewsContainerWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 230.h,
+      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(
+          16.r,
+        ),
+        image: DecorationImage(
+          fit: BoxFit.fill,
+          image: NetworkImage(
+            MyUtils.getTempLink(),
+          ),
+        ),
+      ),
+      child: Stack(
+        children: <Widget>[
+          Align(
+            alignment: Alignment.topRight,
+            child: Container(
+              margin: EdgeInsets.only(top: 16.h, right: 16.w),
+              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.r),
+                color: Colors.black,
+              ),
+              child: Text(
+                "May 15,202417:55 ET",
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: ClipRect(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
+                child: Container(
+                  height: 115.h,
+                  width: double.infinity,
+                  color: Colors.black.withOpacity(0.5),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: Column(
+                      children: [
+                        12.verticalSpace,
+                        Text(
+                          'WPT World Championship \$40M Prize Pool Includes \$2.4M Overlay',
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                        12.verticalSpace,
+                        Text(
+                          'The World Poker Tour fell just short of the ambitious \$40 million',
+                          style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                                color: Colors.white.withOpacity(0.5),
+                              ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class OddsDetailsCard extends StatelessWidget {
+  const OddsDetailsCard({
+    this.color,
+    this.endTextcolor,
+    required this.value,
+    required this.icon,
+    required this.title,
+    required this.subTitle,
+    required this.promotion,
+    required this.estimatedValue,
+    required this.frequency,
+    required this.details,
+    required this.info,
+    super.key,
+  });
+  final Color? color;
+  final Color? endTextcolor;
+  final String value;
+  final String icon;
+  final String title;
+  final String subTitle;
+  final String promotion;
+  final String estimatedValue;
+  final String frequency;
+  final String details;
+  final String info;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 24.w),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primaryContainer,
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: const Color(0xFFFFFFFF).withOpacity(0.1),
+            ),
+          ),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 20.w, top: 20.h),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      icon,
+                      width: 30.w,
+                      height: 22.h,
+                    ),
+                    14.horizontalSpace,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          title,
+                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
+                        ),
+                        Text(
+                          subTitle,
+                          style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                                fontWeight: FontWeight.w400,
+                                color: const Color(0xFFB8C0CA),
+                              ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              16.verticalSpace,
+              Divider(
+                color: const Color(0xFFFFFFFF).withOpacity(0.1),
+              ),
+              16.verticalSpace,
+              WidgetWithLeftAndRightText(
+                title: "Promotion",
+                subTitle: promotion,
+              ),
+              16.verticalSpace,
+              WidgetWithLeftAndRightText(
+                title: "Estimated value",
+                subTitle: estimatedValue,
+                color: endTextcolor,
+              ),
+              16.verticalSpace,
+              WidgetWithLeftAndRightText(
+                title: "Frequency",
+                subTitle: frequency,
+              ),
+              16.verticalSpace,
+              Divider(
+                color: const Color(0xFFFFFFFF).withOpacity(0.1),
+              ),
+              16.verticalSpace,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Details",
+                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xFFFFFFFF).withOpacity(0.3),
+                          ),
+                    ),
+                    8.verticalSpace,
+                    Text(
+                      details,
+                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                            fontWeight: FontWeight.w400,
+                          ),
+                    ),
+                  ],
+                ),
+              ),
+              14.verticalSpace,
+              Divider(
+                color: const Color(0xFFFFFFFF).withOpacity(0.1),
+              ),
+              10.verticalSpace,
+              Text(
+                info,
+                style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xFFFFFFFF).withOpacity(0.3),
+                    ),
+              ),
+              10.verticalSpace,
+            ],
+          ),
+        ),
+        Positioned(
+          right: 10.w,
+          top: 20.h,
+          child: Stack(
+            children: [
+              SvgPicture.asset(
+                AppIcons.greenLabel,
+                width: 120.w,
+                fit: BoxFit.fill,
+                color: color,
+              ),
+              Positioned(
+                right: 15.w,
+                top: 15.h,
+                child: Text(
+                  value,
+                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+              )
+            ],
+          ),
+        ),
+      ],
+    );
+  }
 }
 
 class RowTextWithViewAll extends StatelessWidget {
@@ -280,7 +543,6 @@ class ImageWithRightTextWidget extends StatelessWidget {
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "\$599 to the losing hand \n\$300 to the winning hand \n\$100 share for each player sitting at the winning table",
