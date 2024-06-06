@@ -1,4 +1,4 @@
-import 'package:all_bet_info/app/constant/interested_list.dart';
+import 'package:all_bet_info/constant/interested_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stacked/stacked.dart';

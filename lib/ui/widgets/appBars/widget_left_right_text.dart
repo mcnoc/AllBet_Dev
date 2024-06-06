@@ -30,7 +30,9 @@ class WidgetWithLeftAndRightText extends StatelessWidget {
           ),
           const Spacer(),
           if (color != null)
-            color != AppColors.errorColor ? SvgPicture.asset(AppIcons.upGreen) : SvgPicture.asset(AppIcons.downRed),
+            color != AppColors.errorColor
+                ? SvgPicture.asset(AppIcons.upGreen)
+                : SvgPicture.asset(AppIcons.downRed),
           5.horizontalSpace,
           Text(
             subTitle,

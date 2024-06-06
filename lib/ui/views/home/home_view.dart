@@ -27,6 +27,7 @@ class HomeView extends StackedView<HomeViewModel> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -181,18 +182,12 @@ class HomeView extends StackedView<HomeViewModel> {
                 ),
               ),
               20.verticalSpace,
-
               const NewsContainerWidget(),
               16.verticalSpace,
               const NewsContainerWidget(),
               16.verticalSpace,
               const NewsContainerWidget(),
-
-              ///
-              ///
-              ///
-              ///
-              550.verticalSpace,
+              16.verticalSpace,
             ],
           ),
         ),
@@ -573,28 +568,51 @@ class BestOffersSliderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider.builder(
-      itemCount: 5,
-      options: CarouselOptions(
-        height: 180.h,
-        aspectRatio: 1.5,
-        viewportFraction: 0.4,
-        initialPage: 0,
-        enableInfiniteScroll: true,
+    return Container(
+      height: 180.h,
+      child: ListView.builder(
         scrollDirection: Axis.horizontal,
-      ),
-      itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
-        return Container(
-          height: 180.h,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage(itemIndex == 0 ? AppImages.imPokerBestOffers : AppImages.imCasinoBestOffers),
+        itemCount: 3,
+        itemBuilder: (context, index) {
+          return Container(
+            height: 180.h,
+            width: 144.w,
+            margin: EdgeInsets.only(left: index == 0 ? 24.w : 0),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage(index == 0 ? AppImages.imPokerBestOffers : AppImages.imCasinoBestOffers),
+              ),
+              borderRadius: BorderRadius.circular(16.r),
             ),
-            borderRadius: BorderRadius.circular(16.r),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
+
+    // CarouselSlider.builder(
+    //   itemCount: 5,
+    //   options: CarouselOptions(
+    //     height: 180.h,
+    //     aspectRatio: 1.5,
+    //     viewportFraction: 0.4,
+    //     initialPage: 0,
+    //     enableInfiniteScroll: true,
+    //     scrollDirection: Axis.horizontal,
+    //   ),
+    //   itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
+    //     return Container(
+    //       height: 180.h,
+    //       margin: EdgeInsets.only(left: itemIndex == 0 ? 24.w : 0),
+    //       decoration: BoxDecoration(
+    //         image: DecorationImage(
+    //           fit: BoxFit.fill,
+    //           image: AssetImage(itemIndex == 0 ? AppImages.imPokerBestOffers : AppImages.imCasinoBestOffers),
+    //         ),
+    //         borderRadius: BorderRadius.circular(16.r),
+    //       ),
+    //     );
+    //   },
+    // );
   }
 }
