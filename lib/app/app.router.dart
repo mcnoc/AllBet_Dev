@@ -6,13 +6,14 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:all_bet_info/ui/views/home/home_view.dart' as _i2;
+import 'package:all_bet_info/ui/views/navigation/navigation_view.dart' as _i5;
 import 'package:all_bet_info/ui/views/select_interested_in/select_interested_in_view.dart'
     as _i4;
 import 'package:all_bet_info/ui/views/startup/startup_view.dart' as _i3;
-import 'package:flutter/material.dart' as _i5;
+import 'package:flutter/material.dart' as _i6;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i6;
+import 'package:stacked_services/stacked_services.dart' as _i7;
 
 class Routes {
   static const homeView = '/home-view';
@@ -21,10 +22,13 @@ class Routes {
 
   static const selectInterestedInView = '/select-interested-in-view';
 
+  static const navigationView = '/navigation-view';
+
   static const all = <String>{
     homeView,
     startupView,
     selectInterestedInView,
+    navigationView,
   };
 }
 
@@ -42,24 +46,34 @@ class StackedRouter extends _i1.RouterBase {
       Routes.selectInterestedInView,
       page: _i4.SelectInterestedInView,
     ),
+    _i1.RouteDef(
+      Routes.navigationView,
+      page: _i5.NavigationView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i5.MaterialPageRoute<dynamic>(
+      return _i6.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i5.MaterialPageRoute<dynamic>(
+      return _i6.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.SelectInterestedInView: (data) {
-      return _i5.MaterialPageRoute<dynamic>(
+      return _i6.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.SelectInterestedInView(),
+        settings: data,
+      );
+    },
+    _i5.NavigationView: (data) {
+      return _i6.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i5.NavigationView(),
         settings: data,
       );
     },
@@ -72,7 +86,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i6.NavigationService {
+extension NavigatorStateExtension on _i7.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -115,6 +129,20 @@ extension NavigatorStateExtension on _i6.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToNavigationView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.navigationView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -151,6 +179,20 @@ extension NavigatorStateExtension on _i6.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.selectInterestedInView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithNavigationView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.navigationView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

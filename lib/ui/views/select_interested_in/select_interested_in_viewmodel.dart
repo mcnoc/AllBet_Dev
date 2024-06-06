@@ -1,6 +1,6 @@
 import 'package:all_bet_info/app/app.locator.dart';
 import 'package:all_bet_info/app/app.router.dart';
-import 'package:all_bet_info/app/constant/interested_list.dart';
+import 'package:all_bet_info/constant/interested_list.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
