@@ -6,6 +6,7 @@ import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:all_bet_info/ui/views/select_interested_in/select_interested_in_view.dart';
 import 'package:all_bet_info/ui/views/navigation/navigation_view.dart';
+import 'package:all_bet_info/ui/views/poker/poker_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -14,6 +15,7 @@ import 'package:all_bet_info/ui/views/navigation/navigation_view.dart';
     MaterialRoute(page: StartupView),
     MaterialRoute(page: SelectInterestedInView),
     MaterialRoute(page: NavigationView),
+    MaterialRoute(page: PokerView),
 // @stacked-route
   ],
   dependencies: [
