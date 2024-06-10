@@ -59,9 +59,12 @@ class SelectInterestedInView extends StackedView<SelectInterestedInViewModel> {
                     ),
                     child: InterestedCheckBoxWidget(
                       index: index,
-                      isContain: viewModel.selectedInterestedList.contains(interestedList[index]),
-                      onCardTap: () => viewModel.updateSelectedInterestedList(interestedList[index]),
-                      onChanged: (value) => viewModel.updateSelectedInterestedList(interestedList[index]),
+                      isContain: viewModel.selectedInterestedList
+                          .contains(interestedList[index]),
+                      onCardTap: () => viewModel
+                          .updateSelectedInterestedList(interestedList[index]),
+                      onChanged: (value) => viewModel
+                          .updateSelectedInterestedList(interestedList[index]),
                     ),
                   );
                 },
@@ -121,7 +124,9 @@ class InterestedCheckBoxWidget extends StatelessWidget {
           color: Theme.of(context).colorScheme.primaryContainer,
           borderRadius: BorderRadius.circular(8.r),
           border: Border.all(
-            color: isContain ? Theme.of(context).colorScheme.primary : Colors.transparent,
+            color: isContain
+                ? Theme.of(context).colorScheme.primary
+                : Colors.transparent,
           ),
         ),
         child: Row(

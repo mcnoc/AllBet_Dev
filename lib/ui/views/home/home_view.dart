@@ -75,9 +75,10 @@ class HomeView extends StackedView<HomeViewModel> {
                       padding: EdgeInsets.symmetric(horizontal: 24.w),
                       child: Text(
                         'Action near you',
-                        style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                              fontWeight: FontWeight.w600,
-                            ),
+                        style:
+                            Theme.of(context).textTheme.displaySmall?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
                       ),
                     ),
                     20.verticalSpace,
@@ -100,7 +101,8 @@ class HomeView extends StackedView<HomeViewModel> {
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
                           return Padding(
-                            padding: EdgeInsets.only(right: 12.w, left: index == 0 ? 24.w : 0.w),
+                            padding: EdgeInsets.only(
+                                right: 12.w, left: index == 0 ? 24.w : 0.w),
                             child: const ImageWithRightTextWidget(),
                           );
                         },
@@ -123,7 +125,8 @@ class HomeView extends StackedView<HomeViewModel> {
                       promotion: "\$100/hr High Hand",
                       estimatedValue: "\$3.13 EV/hr",
                       frequency: "Every Hour",
-                      details: "Win \$100 for the highest hand shown each hour.",
+                      details:
+                          "Win \$100 for the highest hand shown each hour.",
                       info: "Max 1 win per player/hour",
                     ),
                     15.verticalSpace,
@@ -151,7 +154,8 @@ class HomeView extends StackedView<HomeViewModel> {
                       promotion: "Hot Cards",
                       estimatedValue: "\$1.45 EV/h*",
                       frequency: "Very Rare ",
-                      details: "Get rewarded on the flop (Set, Full House, Quads)",
+                      details:
+                          "Get rewarded on the flop (Set, Full House, Quads)",
                       info: "See room website for details.",
                     ),
                     16.verticalSpace,
@@ -161,7 +165,10 @@ class HomeView extends StackedView<HomeViewModel> {
                         onTap: () {},
                         child: Text(
                           'View all',
-                          style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                          style: Theme.of(context)
+                              .textTheme
+                              .displaySmall
+                              ?.copyWith(
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.primaryColor,
                               ),
@@ -262,9 +269,10 @@ class NewsContainerWidget extends StatelessWidget {
                         12.verticalSpace,
                         Text(
                           'The World Poker Tour fell just short of the ambitious \$40 million',
-                          style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                                color: Colors.white.withOpacity(0.5),
-                              ),
+                          style:
+                              Theme.of(context).textTheme.labelMedium?.copyWith(
+                                    color: Colors.white.withOpacity(0.5),
+                                  ),
                         ),
                       ],
                     ),
@@ -336,16 +344,18 @@ class OddsDetailsCard extends StatelessWidget {
                       children: [
                         Text(
                           title,
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                fontWeight: FontWeight.w600,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                  ),
                         ),
                         Text(
                           subTitle,
-                          style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                                fontWeight: FontWeight.w400,
-                                color: const Color(0xFFB8C0CA),
-                              ),
+                          style:
+                              Theme.of(context).textTheme.labelLarge?.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                    color: const Color(0xFFB8C0CA),
+                                  ),
                         ),
                       ],
                     ),
@@ -495,7 +505,9 @@ class CrumbsWidget extends StatelessWidget {
           width: index == 0 ? 45.w : 8.w,
           margin: EdgeInsets.all(2.w),
           decoration: BoxDecoration(
-            color: index == 0 ? AppColors.primaryColor : Theme.of(context).colorScheme.primaryContainer,
+            color: index == 0
+                ? AppColors.primaryColor
+                : Theme.of(context).colorScheme.primaryContainer,
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
               color: const Color(0xFFFFFFFF).withOpacity(0.1),
@@ -581,7 +593,9 @@ class BestOffersSliderWidget extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage(index == 0 ? AppImages.imPokerBestOffers : AppImages.imCasinoBestOffers),
+                image: AssetImage(index == 0
+                    ? AppImages.imPokerBestOffers
+                    : AppImages.imCasinoBestOffers),
               ),
               borderRadius: BorderRadius.circular(16.r),
             ),
