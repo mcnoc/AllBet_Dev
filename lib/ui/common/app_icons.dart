@@ -16,4 +16,7 @@ class AppIcons {
   static const String greenLabel = '$path/greenLabel.svg';
   static const String icCards = '$path/icCards.svg';
   static const String icBadBeat = '$path/icBadBeat.svg';
+
+  //Poker Screen Icons
+  static const String live = '$path/live.jpg';
 }
