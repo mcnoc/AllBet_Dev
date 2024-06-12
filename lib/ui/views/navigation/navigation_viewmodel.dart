@@ -1,3 +1,5 @@
+import 'package:all_bet_info/app/app.locator.dart';
+import 'package:all_bet_info/app/app.router.dart';
 import 'package:all_bet_info/ui/common/app_icons.dart';
 import 'package:all_bet_info/ui/views/home/home_view.dart';
 import 'package:all_bet_info/ui/views/poker/poker_view.dart';
@@ -5,8 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class NavigationViewModel extends IndexTrackingViewModel {
+  final NavigationService _navigationService = locator<NavigationService>();
   List<BottomNavigationBarItem> getBottomNavBarItems(int selectedINDEX) {
     List<String> icons = [
       AppIcons.icHome,
@@ -49,4 +53,11 @@ class NavigationViewModel extends IndexTrackingViewModel {
         const HomeView(),
         const HomeView(),
       ];
+
+  // ====================================
+  // Navigations Functions
+  // ====================================
+  void navigateToNewPokerSessionView() {
+    _navigationService.navigateToNewPokerSessionView();
+  }
 }

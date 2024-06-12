@@ -1,6 +1,5 @@
 import 'package:all_bet_info/ui/common/app_colors.dart';
 import 'package:all_bet_info/ui/common/app_icons.dart';
-import 'package:all_bet_info/ui/common/app_images.dart';
 import 'package:all_bet_info/ui/views/home/home_view.dart';
 import 'package:all_bet_info/ui/widgets/appBars/main_screen_custom_appBar.dart';
 import 'package:all_bet_info/ui/widgets/custom_image_widget.dart';
@@ -63,7 +62,8 @@ class PokerView extends StackedView<PokerViewModel> {
                         children: List.generate(
                           3,
                           (index) => Padding(
-                            padding: EdgeInsets.only(left: index == 0 ? 24.w : 0.0, right: 16.w),
+                            padding: EdgeInsets.only(
+                                left: index == 0 ? 24.w : 0.0, right: 16.w),
                             child: const PockerNearYouWidget(),
                           ),
                         ),
@@ -87,7 +87,8 @@ class PokerView extends StackedView<PokerViewModel> {
                       promotion: "\$100/hr High Hand",
                       estimatedValue: "\$3.13 EV/hr",
                       frequency: "Every Hour",
-                      details: "Win \$100 for the highest hand shown each hour.",
+                      details:
+                          "Win \$100 for the highest hand shown each hour.",
                       info: "Max 1 win per player/hour",
                     ),
                     15.verticalSpace,
@@ -117,7 +118,8 @@ class PokerView extends StackedView<PokerViewModel> {
                       promotion: "Hot Cards",
                       estimatedValue: "\$1.45 EV/h*",
                       frequency: "Very Rare ",
-                      details: "Get rewarded on the flop (Set, Full House, Quads)",
+                      details:
+                          "Get rewarded on the flop (Set, Full House, Quads)",
                       info: "See room website for details.",
                     ),
                     16.verticalSpace,
@@ -164,7 +166,8 @@ class PockerNearYouWidget extends StatelessWidget {
               topLeft: Radius.circular(16.r),
               topRight: Radius.circular(16.r),
             ),
-            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTncVciwVOJAM8qf7WU_BmOLU5egRhETnzhcA&s",
+            url:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTncVciwVOJAM8qf7WU_BmOLU5egRhETnzhcA&s",
             fit: BoxFit.cover,
             height: 70.h,
             width: 220.w,
