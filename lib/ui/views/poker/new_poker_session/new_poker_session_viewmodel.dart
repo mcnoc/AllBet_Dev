@@ -22,4 +22,14 @@ class NewPokerSessionViewModel extends BaseViewModel {
     selectedBtnIndex = index;
     notifyListeners();
   }
+
+  List<String> limitTypeStrings = [
+    'NL - No Limit',
+    'PL - Pot Limit',
+    'NL2-NL10, FL4-FL20',
+    'NL20-NL100, FL50-FL100',
+    'NL200-NL800, FL200-FL600',
+    'NL1000-NL8000, FL1000-FL6000',
+    'NL10000+ , FL10000',
+  ];
 }
