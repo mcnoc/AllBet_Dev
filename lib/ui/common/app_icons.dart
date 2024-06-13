@@ -19,4 +19,6 @@ class AppIcons {
 
   //Poker Screen Icons
   static const String live = '$path/live.jpg';
+  static const String icSave = '$path/icSave.svg';
+  static const String icStart = '$path/icStart.svg';
 }
