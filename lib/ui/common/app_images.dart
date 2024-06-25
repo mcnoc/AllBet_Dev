@@ -8,4 +8,6 @@ class AppImages {
 
   static const String imPokerBestOffers = '$path/imPokerBestOffers.png';
   static const String imCasinoBestOffers = '$path/imCasinoBestOffers.png';
+  static const String imAnalytics01 = '$path/imAnalytics01.png';
+  static const String imAnalytics02 = '$path/imAnalytics02.png';
 }

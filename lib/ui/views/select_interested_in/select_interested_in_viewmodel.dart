@@ -9,20 +9,18 @@ class SelectInterestedInViewModel extends BaseViewModel {
   List<String> selectedInterestedList = [];
 
   void updateSelectedInterestedList(String interested) {
-    //TODO: Change this logic as there will not be any snakbar if there is max selected items
-    if (selectedInterestedList.length < maxInterestedSelection) {
-      if (selectedInterestedList.contains(interested)) {
-        selectedInterestedList.remove(interested);
-      } else {
-        selectedInterestedList.add(interested);
-      }
-      notifyListeners();
-    } else {
-      // Show a snackbar or dialog to inform the user that they can only select 4 items
+    if (selectedInterestedList.length == 4) {
+      return;
     }
+    if (selectedInterestedList.contains(interested)) {
+      selectedInterestedList.remove(interested);
+    } else {
+      selectedInterestedList.add(interested);
+    }
+    notifyListeners();
   }
 
   void navigateToHomeView() {
-    _navigationService.navigateTo(Routes.homeView);
+    _navigationService.navigateTo(Routes.navigationView);
   }
 }
