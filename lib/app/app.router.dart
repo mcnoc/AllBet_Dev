@@ -12,11 +12,12 @@ import 'package:all_bet_info/ui/views/poker/new_poker_session/new_poker_session_
 import 'package:all_bet_info/ui/views/poker/poker_view.dart' as _i6;
 import 'package:all_bet_info/ui/views/select_interested_in/select_interested_in_view.dart'
     as _i4;
+import 'package:all_bet_info/ui/views/sports/sports_view.dart' as _i8;
 import 'package:all_bet_info/ui/views/startup/startup_view.dart' as _i3;
-import 'package:flutter/material.dart' as _i8;
+import 'package:flutter/material.dart' as _i9;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i9;
+import 'package:stacked_services/stacked_services.dart' as _i10;
 
 class Routes {
   static const homeView = '/home-view';
@@ -31,6 +32,9 @@ class Routes {
 
   static const newPokerSessionView = '/new-poker-session-view';
 
+  static const sportsView = '/sports-view';
+
+
   static const all = <String>{
     homeView,
     startupView,
@@ -38,6 +42,7 @@ class Routes {
     navigationView,
     pokerView,
     newPokerSessionView,
+    sportsView,
   };
 }
 
@@ -67,42 +72,56 @@ class StackedRouter extends _i1.RouterBase {
       Routes.newPokerSessionView,
       page: _i7.NewPokerSessionView,
     ),
+    _i1.RouteDef(
+      Routes.sportsView,
+      page: _i8.SportsView,
+    ),
+    _i1.RouteDef(
+      Routes.sportsView,
+      page: _i8.SportsView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i8.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i8.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.SelectInterestedInView: (data) {
-      return _i8.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.SelectInterestedInView(),
         settings: data,
       );
     },
     _i5.NavigationView: (data) {
-      return _i8.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.NavigationView(),
         settings: data,
       );
     },
     _i6.PokerView: (data) {
-      return _i8.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.PokerView(),
         settings: data,
       );
     },
     _i7.NewPokerSessionView: (data) {
-      return _i8.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.NewPokerSessionView(),
+        settings: data,
+      );
+    },
+    _i8.SportsView: (data) {
+      return _i9.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i8.SportsView(),
         settings: data,
       );
     },
@@ -115,7 +134,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i9.NavigationService {
+extension NavigatorStateExtension on _i10.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -200,6 +219,21 @@ extension NavigatorStateExtension on _i9.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToSportsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.sportsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -283,4 +317,19 @@ extension NavigatorStateExtension on _i9.NavigationService {
         parameters: parameters,
         transition: transition);
   }
+
+  Future<dynamic> replaceWithSportsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.sportsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
 }

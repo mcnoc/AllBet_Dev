@@ -3,6 +3,7 @@ import 'package:all_bet_info/app/app.router.dart';
 import 'package:all_bet_info/ui/common/app_icons.dart';
 import 'package:all_bet_info/ui/views/home/home_view.dart';
 import 'package:all_bet_info/ui/views/poker/poker_view.dart';
+import 'package:all_bet_info/ui/views/sports/sports_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -49,7 +50,7 @@ class NavigationViewModel extends IndexTrackingViewModel {
   List<Widget> get bottomNavScreen => [
         const HomeView(),
         const PokerView(),
-        const HomeView(),
+        const SportsView(),
         const HomeView(),
         const HomeView(),
       ];
