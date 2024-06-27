@@ -18,6 +18,8 @@ import 'package:flutter/material.dart' as _i9;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i10;
+import 'package:all_bet_info/ui/views/sports/new_bet_view.dart' as _i11;
+import 'package:all_bet_info/ui/views/sports/save_bet_view.dart' as _i12;
 
 class Routes {
   static const homeView = '/home-view';
@@ -34,6 +36,10 @@ class Routes {
 
   static const sportsView = '/sports-view';
 
+  static const newBetView = '/new-bet-view';
+
+  static const saveBetView = '/save-bet-view';
+
 
   static const all = <String>{
     homeView,
@@ -43,6 +49,8 @@ class Routes {
     pokerView,
     newPokerSessionView,
     sportsView,
+    newBetView,
+    saveBetView
   };
 }
 
@@ -77,9 +85,13 @@ class StackedRouter extends _i1.RouterBase {
       page: _i8.SportsView,
     ),
     _i1.RouteDef(
-      Routes.sportsView,
-      page: _i8.SportsView,
+      Routes.newBetView,
+      page: _i11.NewBetView
     ),
+    _i1.RouteDef(
+      Routes.saveBetView,
+      page: _i12.SaveBetView
+    )
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
@@ -125,6 +137,18 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
+    _i11.NewBetView:(data){
+      return _i9.MaterialPageRoute<dynamic>(
+        builder: (context)=> const _i11.NewBetView(),
+        settings: data,
+      );
+    },
+    _i12.SaveBetView:(data){
+      return _i9.MaterialPageRoute<dynamic>(
+        builder: (context)=> const _i12.SaveBetView(),
+        settings: data,
+      );
+    }
   };
 
   @override
@@ -227,6 +251,34 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.sportsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+ Future<dynamic> navigateToNewBetView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.newBetView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+ Future<dynamic> navigateToSaveBetView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.saveBetView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

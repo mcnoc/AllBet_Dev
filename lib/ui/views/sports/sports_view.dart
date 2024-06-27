@@ -1,3 +1,5 @@
+import 'package:all_bet_info/ui/views/sports/new_bet_view.dart';
+import 'package:all_bet_info/ui/views/sports/new_bet_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -118,7 +120,7 @@ class SportsView extends StackedView<SportsViewModel> {
                         ),),
                         15.verticalSpace,
                         SizedBox(
-                          height: 70,
+                          height: 80,
                           child: ListView.separated(
                             separatorBuilder: (context,index){
                               return const VerticalDivider(
@@ -130,7 +132,11 @@ class SportsView extends StackedView<SportsViewModel> {
                               itemCount: 1,
                               itemBuilder: (context,index){
                             return
-                              SvgPicture.asset('assets/icons/NFL.svg',height: 60,)
+                              InkWell(
+                                  onTap: (){
+                                    viewModel.navigateToCreateNewBet();
+                                  },
+                                  child: SvgPicture.asset('assets/icons/NFL.svg',height: 80,))
 
                               /*Container(
                               padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
@@ -267,10 +273,10 @@ class SportsView extends StackedView<SportsViewModel> {
                               fontSize: 14,
                             ),
 
-                            tabs: [
-                              const Tab(text: 'Analytics',),
-                              const Tab(text: 'Most Profitable', ),
-                              const Tab(text: 'All',),
+                            tabs: const [
+                              Tab(text: 'Analytics',),
+                              Tab(text: 'Most Profitable', ),
+                              Tab(text: 'All',),
                             ],
                           ),
                           SizedBox(

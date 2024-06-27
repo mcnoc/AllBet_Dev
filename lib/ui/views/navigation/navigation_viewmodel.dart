@@ -2,6 +2,7 @@ import 'package:all_bet_info/app/app.locator.dart';
 import 'package:all_bet_info/app/app.router.dart';
 import 'package:all_bet_info/ui/common/app_icons.dart';
 import 'package:all_bet_info/ui/views/home/home_view.dart';
+import 'package:all_bet_info/ui/views/more/more_view.dart';
 import 'package:all_bet_info/ui/views/poker/poker_view.dart';
 import 'package:all_bet_info/ui/views/sports/sports_view.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +53,7 @@ class NavigationViewModel extends IndexTrackingViewModel {
         const PokerView(),
         const SportsView(),
         const HomeView(),
-        const HomeView(),
+        const MoreView(),
       ];
 
   // ====================================
