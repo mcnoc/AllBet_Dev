@@ -20,6 +20,9 @@ import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i10;
 import 'package:all_bet_info/ui/views/sports/new_bet_view.dart' as _i11;
 import 'package:all_bet_info/ui/views/sports/save_bet_view.dart' as _i12;
+import 'package:all_bet_info/ui/views/sports/sports_event_view.dart' as _i13;
+import 'package:all_bet_info/ui/views/sports/game_score_view.dart' as _i14;
+import 'package:all_bet_info/ui/views/sports/watching_view.dart' as _i15;
 
 class Routes {
   static const homeView = '/home-view';
@@ -40,6 +43,12 @@ class Routes {
 
   static const saveBetView = '/save-bet-view';
 
+  static const sportEventView = '/sport-event-view';
+
+  static const gameScoreView = '/game-score-view';
+
+  static const watchingView = '/watching-view';
+
 
   static const all = <String>{
     homeView,
@@ -50,7 +59,10 @@ class Routes {
     newPokerSessionView,
     sportsView,
     newBetView,
-    saveBetView
+    saveBetView,
+    sportEventView,
+    gameScoreView,
+    watchingView
   };
 }
 
@@ -91,7 +103,19 @@ class StackedRouter extends _i1.RouterBase {
     _i1.RouteDef(
       Routes.saveBetView,
       page: _i12.SaveBetView
-    )
+    ),
+    _i1.RouteDef(
+      Routes.sportEventView,
+      page: _i13.SportsEventView
+    ),
+    _i1.RouteDef(
+      Routes.gameScoreView,
+      page: _i14.GameScoreView
+    ),
+    _i1.RouteDef(
+      Routes.watchingView,
+      page: _i15.WatchingView
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
@@ -148,7 +172,25 @@ class StackedRouter extends _i1.RouterBase {
         builder: (context)=> const _i12.SaveBetView(),
         settings: data,
       );
-    }
+    },
+    _i13.SportsEventView:(data){
+      return _i9.MaterialPageRoute<dynamic>(
+        builder: (context)=>const _i13.SportsEventView(),
+        settings: data
+      );
+    },
+    _i14.GameScoreView:(data){
+      return _i9.MaterialPageRoute<dynamic>(
+        builder: (context)=>const _i14.GameScoreView(),
+        settings: data
+      );
+    },
+    _i15.WatchingView:(data){
+      return _i9.MaterialPageRoute<dynamic>(
+        builder: (context)=>const _i15.WatchingView(),
+        settings: data
+      );
+    },
   };
 
   @override
@@ -279,6 +321,50 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.saveBetView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+
+ Future<dynamic> navigateToSportsEventsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.sportEventView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+
+Future<dynamic> navigateToGameScoreView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.gameScoreView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+Future<dynamic> navigateToWatchingView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.watchingView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
