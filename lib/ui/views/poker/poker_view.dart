@@ -14,7 +14,7 @@ import 'package:stacked/stacked.dart';
 import 'poker_viewmodel.dart';
 
 class PokerView extends StackedView<PokerViewModel> {
-  const PokerView({Key? key}) : super(key: key);
+  const PokerView({super.key});
 
   @override
   Widget builder(
@@ -67,8 +67,7 @@ class PokerView extends StackedView<PokerViewModel> {
                           children: List.generate(
                             3,
                             (index) => Padding(
-                              padding: EdgeInsets.only(
-                                  left: index == 0 ? 24.w : 0.0, right: 16.w),
+                              padding: EdgeInsets.only(left: index == 0 ? 24.w : 0.0, right: 16.w),
                               child: const PockerNearYouWidget(),
                             ),
                           ),
@@ -92,8 +91,7 @@ class PokerView extends StackedView<PokerViewModel> {
                         promotion: "\$100/hr High Hand",
                         estimatedValue: "\$3.13 EV/hr",
                         frequency: "Every Hour",
-                        details:
-                            "Win \$100 for the highest hand shown each hour.",
+                        details: "Win \$100 for the highest hand shown each hour.",
                         info: "Max 1 win per player/hour",
                       ),
                       15.verticalSpace,
@@ -108,8 +106,7 @@ class PokerView extends StackedView<PokerViewModel> {
                         promotion: "Bad Beat Jackpot",
                         estimatedValue: "-\$149.50 EV/hr",
                         frequency: "Very Rare",
-                        details:
-                            "Share a jackpot (specific requirements apply)",
+                        details: "Share a jackpot (specific requirements apply)",
                         info: "See room for full jackpot details",
                       ),
                       15.verticalSpace,
@@ -124,8 +121,7 @@ class PokerView extends StackedView<PokerViewModel> {
                         promotion: "Hot Cards",
                         estimatedValue: "\$1.45 EV/h*",
                         frequency: "Very Rare ",
-                        details:
-                            "Get rewarded on the flop (Set, Full House, Quads)",
+                        details: "Get rewarded on the flop (Set, Full House, Quads)",
                         info: "See room website for details.",
                       ),
                       16.verticalSpace,
@@ -138,10 +134,9 @@ class PokerView extends StackedView<PokerViewModel> {
                             isScrollable: true,
                             unselectedLabelColor: const Color(0xFFB8C0CA),
                             indicatorColor: AppColors.whiteColor,
-                            labelStyle:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                            labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
                             indicatorSize: TabBarIndicatorSize.tab,
                             dividerColor: AppColors.whiteColor.withOpacity(0.1),
                             tabs: const [

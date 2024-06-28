@@ -11,38 +11,54 @@ class WatchingView extends StackedView<WatchingViewmodel> {
 
   @override
   Widget builder(
-      BuildContext context,
-      WatchingViewmodel viewModel,
-      Widget? child,
-      ) {
-    return SafeArea(child: Scaffold(
+    BuildContext context,
+    WatchingViewmodel viewModel,
+    Widget? child,
+  ) {
+    return SafeArea(
+        child: Scaffold(
       backgroundColor: const Color(0xff111214),
       appBar: AppBar(
-        title: Text('Watching',style: Theme.of(context).textTheme.bodySmall,),
+        title: Text(
+          'Watching',
+          style: Theme.of(context).textTheme.bodySmall,
+        ),
         leading: IconButton(
-          onPressed: (){
+          onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(Icons.arrow_back_ios,color: Colors.white,),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
         ),
       ),
-      body:  Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 5),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const EndedGameCard(),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               const LiveGameCard(),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               UpcomingGameCard(),
-              const SizedBox(height: 15,),
-
+              const SizedBox(
+                height: 15,
+              ),
               const EndedGameCard(),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               const LiveGameCard(),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               UpcomingGameCard()
             ],
           ),
@@ -53,7 +69,7 @@ class WatchingView extends StackedView<WatchingViewmodel> {
 
   @override
   WatchingViewmodel viewModelBuilder(
-      BuildContext context,
-      ) =>
+    BuildContext context,
+  ) =>
       WatchingViewmodel();
 }

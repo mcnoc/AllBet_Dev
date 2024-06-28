@@ -49,7 +49,6 @@ class Routes {
 
   static const watchingView = '/watching-view';
 
-
   static const all = <String>{
     homeView,
     startupView,
@@ -96,26 +95,11 @@ class StackedRouter extends _i1.RouterBase {
       Routes.sportsView,
       page: _i8.SportsView,
     ),
-    _i1.RouteDef(
-      Routes.newBetView,
-      page: _i11.NewBetView
-    ),
-    _i1.RouteDef(
-      Routes.saveBetView,
-      page: _i12.SaveBetView
-    ),
-    _i1.RouteDef(
-      Routes.sportEventView,
-      page: _i13.SportsEventView
-    ),
-    _i1.RouteDef(
-      Routes.gameScoreView,
-      page: _i14.GameScoreView
-    ),
-    _i1.RouteDef(
-      Routes.watchingView,
-      page: _i15.WatchingView
-    ),
+    _i1.RouteDef(Routes.newBetView, page: _i11.NewBetView),
+    _i1.RouteDef(Routes.saveBetView, page: _i12.SaveBetView),
+    _i1.RouteDef(Routes.sportEventView, page: _i13.SportsEventView),
+    _i1.RouteDef(Routes.gameScoreView, page: _i14.GameScoreView),
+    _i1.RouteDef(Routes.watchingView, page: _i15.WatchingView),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
@@ -161,35 +145,29 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i11.NewBetView:(data){
+    _i11.NewBetView: (data) {
       return _i9.MaterialPageRoute<dynamic>(
-        builder: (context)=> const _i11.NewBetView(),
+        builder: (context) => const _i11.NewBetView(),
         settings: data,
       );
     },
-    _i12.SaveBetView:(data){
+    _i12.SaveBetView: (data) {
       return _i9.MaterialPageRoute<dynamic>(
-        builder: (context)=> const _i12.SaveBetView(),
+        builder: (context) => const _i12.SaveBetView(),
         settings: data,
       );
     },
-    _i13.SportsEventView:(data){
+    _i13.SportsEventView: (data) {
       return _i9.MaterialPageRoute<dynamic>(
-        builder: (context)=>const _i13.SportsEventView(),
-        settings: data
-      );
+          builder: (context) => const _i13.SportsEventView(), settings: data);
     },
-    _i14.GameScoreView:(data){
+    _i14.GameScoreView: (data) {
       return _i9.MaterialPageRoute<dynamic>(
-        builder: (context)=>const _i14.GameScoreView(),
-        settings: data
-      );
+          builder: (context) => const _i14.GameScoreView(), settings: data);
     },
-    _i15.WatchingView:(data){
+    _i15.WatchingView: (data) {
       return _i9.MaterialPageRoute<dynamic>(
-        builder: (context)=>const _i15.WatchingView(),
-        settings: data
-      );
+          builder: (context) => const _i15.WatchingView(), settings: data);
     },
   };
 
@@ -299,7 +277,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition: transition);
   }
 
- Future<dynamic> navigateToNewBetView([
+  Future<dynamic> navigateToNewBetView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -313,7 +291,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition: transition);
   }
 
- Future<dynamic> navigateToSaveBetView([
+  Future<dynamic> navigateToSaveBetView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -327,8 +305,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition: transition);
   }
 
-
- Future<dynamic> navigateToSportsEventsView([
+  Future<dynamic> navigateToSportsEventsView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -342,8 +319,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition: transition);
   }
 
-
-Future<dynamic> navigateToGameScoreView([
+  Future<dynamic> navigateToGameScoreView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -357,7 +333,7 @@ Future<dynamic> navigateToGameScoreView([
         transition: transition);
   }
 
-Future<dynamic> navigateToWatchingView([
+  Future<dynamic> navigateToWatchingView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -370,7 +346,6 @@ Future<dynamic> navigateToWatchingView([
         parameters: parameters,
         transition: transition);
   }
-
 
   Future<dynamic> replaceWithHomeView([
     int? routerId,
@@ -469,5 +444,4 @@ Future<dynamic> navigateToWatchingView([
         parameters: parameters,
         transition: transition);
   }
-
 }

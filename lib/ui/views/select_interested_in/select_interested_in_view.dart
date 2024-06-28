@@ -18,6 +18,7 @@ class SelectInterestedInView extends StackedView<SelectInterestedInViewModel> {
       child: Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
+          forceMaterialTransparency: true,
           backgroundColor: Theme.of(context).colorScheme.background,
           elevation: 0,
           title: Text(

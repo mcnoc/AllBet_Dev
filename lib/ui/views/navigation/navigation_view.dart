@@ -7,7 +7,7 @@ import 'package:stacked/stacked.dart';
 import 'navigation_viewmodel.dart';
 
 class NavigationView extends StackedView<NavigationViewModel> {
-  const NavigationView({Key? key}) : super(key: key);
+  const NavigationView({super.key});
 
   @override
   Widget builder(
@@ -38,8 +38,7 @@ class NavigationView extends StackedView<NavigationViewModel> {
         onPressed: () {
           if (viewModel.currentIndex == 1) {
             viewModel.navigateToNewPokerSessionView();
-          }
-          else if(viewModel.currentIndex==2){
+          } else if (viewModel.currentIndex == 2) {
             viewModel.navigateToNewBetView();
           }
         },

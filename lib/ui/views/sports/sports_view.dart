@@ -7,8 +7,7 @@ import 'package:stacked/stacked.dart';
 import 'sports_viewmodel.dart';
 
 class SportsView extends StackedView<SportsViewModel> {
-   const SportsView({Key? key}) : super(key: key);
- 
+  const SportsView({super.key});
 
   @override
   Widget builder(
@@ -30,11 +29,10 @@ class SportsView extends StackedView<SportsViewModel> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                     Text('Sports',style: GoogleFonts.manrope(
-                      color: Colors.white,
-                      fontSize: 24,
-                       fontWeight: FontWeight.w600
-                    ),),
+                    Text(
+                      'Sports',
+                      style: GoogleFonts.manrope(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600),
+                    ),
                     SvgPicture.asset('assets/icons/settings.svg')
                   ],
                 ),
@@ -43,52 +41,47 @@ class SportsView extends StackedView<SportsViewModel> {
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.only(bottom: 8),
                     alignLabelWithHint: true,
-                    prefixIcon: const Icon(Icons.search,color: Colors.grey,),
+                    prefixIcon: const Icon(
+                      Icons.search,
+                      color: Colors.grey,
+                    ),
                     hintText: "Search",
-                    hintStyle: GoogleFonts.manrope(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16
-                    ),
+                    hintStyle: GoogleFonts.manrope(fontWeight: FontWeight.w400, fontSize: 16),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(
-                            color: Colors.white
-                        )
-                    ),
-                    enabledBorder:  OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.white
-                      )
-                    ),
-                    focusedBorder:OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(
-                            color: Colors.white
-                        )
-                    ),
+                        borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: Colors.white)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: Colors.white)),
                   ),
                 ),
                 20.verticalSpace,
-                Text('Best offers',style: GoogleFonts.manrope(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600
-                ),),
+                Text(
+                  'Best offers',
+                  style: GoogleFonts.manrope(fontSize: 16, fontWeight: FontWeight.w600),
+                ),
                 // 10.verticalSpace,
                 SizedBox(
-                  height: MediaQuery.sizeOf(context).height*0.2,
+                  height: MediaQuery.sizeOf(context).height * 0.2,
                   child: ListView.separated(
-                    separatorBuilder: (context,index){
-                      return const VerticalDivider(width: 10,color: Colors.transparent,);
-                    },
-                    itemCount: 1,
+                      separatorBuilder: (context, index) {
+                        return const VerticalDivider(
+                          width: 10,
+                          color: Colors.transparent,
+                        );
+                      },
+                      itemCount: 1,
                       scrollDirection: Axis.horizontal,
-                      itemBuilder: (context,index){
-                    return Container(
-                        height: 200,
-                        width: 200,
-                        child: const Image(image: AssetImage('assets/images/best_offers.png',),));
-                  }),
+                      itemBuilder: (context, index) {
+                        return Container(
+                            height: 200,
+                            width: 200,
+                            child: const Image(
+                              image: AssetImage(
+                                'assets/images/best_offers.png',
+                              ),
+                            ));
+                      }),
                 ),
                 10.verticalSpace,
                 Container(
@@ -103,40 +96,41 @@ class SportsView extends StackedView<SportsViewModel> {
                   width: MediaQuery.sizeOf(context).width,
                   alignment: Alignment.topLeft,
                   decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
-                    color: Color(0xff111214)
-                  ),
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+                      color: Color(0xff111214)),
                   child: SingleChildScrollView(
                     physics: const NeverScrollableScrollPhysics(),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         15.verticalSpace,
-                        Text('Search odds',style: GoogleFonts.manrope(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600
-                        ),),
+                        Text(
+                          'Search odds',
+                          style: GoogleFonts.manrope(fontSize: 16, fontWeight: FontWeight.w600),
+                        ),
                         15.verticalSpace,
                         SizedBox(
                           height: 80,
                           child: ListView.separated(
-                            separatorBuilder: (context,index){
-                              return const VerticalDivider(
-                                color: Colors.transparent,
-                                width: 10,
-                              );
-                            },
-                            scrollDirection: Axis.horizontal,
+                              separatorBuilder: (context, index) {
+                                return const VerticalDivider(
+                                  color: Colors.transparent,
+                                  width: 10,
+                                );
+                              },
+                              scrollDirection: Axis.horizontal,
                               itemCount: 1,
-                              itemBuilder: (context,index){
-                            return InkWell(
-                                  onTap: (){
-                                    viewModel.navigateToSportsEvents();
-                                  },
-                                  child: SvgPicture.asset('assets/icons/NFL.svg',height: 80,)
-                              )
+                              itemBuilder: (context, index) {
+                                return InkWell(
+                                        onTap: () {
+                                          viewModel.navigateToSportsEvents();
+                                        },
+                                        child: SvgPicture.asset(
+                                          'assets/icons/NFL.svg',
+                                          height: 80,
+                                        ))
 
-                              /*Container(
+                                    /*Container(
                               padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
@@ -144,7 +138,7 @@ class SportsView extends StackedView<SportsViewModel> {
                                 color: Colors.red
                               ),
                               child:
-                              *//* Column(
+                              */ /* Column(
                                 children: [
                                   Text('NFL',style: GoogleFonts.manrope(
                                     fontSize: 12,
@@ -152,9 +146,10 @@ class SportsView extends StackedView<SportsViewModel> {
                                   ),),
                                   SvgPicture.asset('assets/icons/icSports.svg'),
                                 ],
-                              ),*//*
-                            )*/;
-                          }),
+                              ),*/ /*
+                            )*/
+                                    ;
+                              }),
                         ),
                         15.verticalSpace,
                         Container(
@@ -167,21 +162,24 @@ class SportsView extends StackedView<SportsViewModel> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Bookmakers near you',style: GoogleFonts.manrope(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600
-                            ),),
-                            Text('View all >',style: GoogleFonts.manrope(
-                              color: Colors.blueAccent,
-                              fontSize: 14,
-                            ),)
+                            Text(
+                              'Bookmakers near you',
+                              style: GoogleFonts.manrope(fontSize: 16, fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              'View all >',
+                              style: GoogleFonts.manrope(
+                                color: Colors.blueAccent,
+                                fontSize: 14,
+                              ),
+                            )
                           ],
                         ),
                         15.verticalSpace,
                         SizedBox(
                           height: 220,
                           child: ListView.separated(
-                              separatorBuilder: (context,index){
+                              separatorBuilder: (context, index) {
                                 return const VerticalDivider(
                                   color: Colors.transparent,
                                   width: 10,
@@ -189,11 +187,13 @@ class SportsView extends StackedView<SportsViewModel> {
                               },
                               scrollDirection: Axis.horizontal,
                               itemCount: 1,
-                              itemBuilder: (context,index){
-                                return
-                                  SvgPicture.asset('assets/icons/Bets.svg',height: 200,)
+                              itemBuilder: (context, index) {
+                                return SvgPicture.asset(
+                                  'assets/icons/Bets.svg',
+                                  height: 200,
+                                )
 
-                                /*Container(
+                                    /*Container(
                               padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
@@ -202,7 +202,7 @@ class SportsView extends StackedView<SportsViewModel> {
                               ),
                               child:
                               */
-                                /*
+                                    /*
                               Column(
                                 children: [
                                   Text('NFL',style: GoogleFonts.manrope(
@@ -212,8 +212,9 @@ class SportsView extends StackedView<SportsViewModel> {
                                   SvgPicture.asset('assets/icons/icSports.svg'),
                                 ],
                               ),*/
-                                /*
-                            )*/;
+                                    /*
+                            )*/
+                                    ;
                               }),
                         ),
                         15.verticalSpace,
@@ -223,23 +224,25 @@ class SportsView extends StackedView<SportsViewModel> {
                           child: const Image(image: AssetImage('assets/images/dots.png')),
                         ),
                         15.verticalSpace,
-
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Watching',style: GoogleFonts.manrope(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600
-                            ),),
+                            Text(
+                              'Watching',
+                              style: GoogleFonts.manrope(fontSize: 16, fontWeight: FontWeight.w600),
+                            ),
                             InkWell(
-                              onTap: (){
+                              onTap: () {
                                 viewModel.navigateToWatchingView();
                               },
-                              child: Text('View all >',style: GoogleFonts.manrope(
-                                color: Colors.blueAccent,
-                                fontSize: 14,
-                              ),),
+                              child: Text(
+                                'View all >',
+                                style: GoogleFonts.manrope(
+                                  color: Colors.blueAccent,
+                                  fontSize: 14,
+                                ),
+                              ),
                             )
                           ],
                         ),
@@ -248,20 +251,18 @@ class SportsView extends StackedView<SportsViewModel> {
                         15.verticalSpace,
                         Align(
                           alignment: Alignment.center,
-                          child: Text('View all',style: GoogleFonts.manrope(
-                            color: Colors.blueAccent,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600
-                          ),),
+                          child: Text(
+                            'View all',
+                            style: GoogleFonts.manrope(
+                                color: Colors.blueAccent, fontSize: 16, fontWeight: FontWeight.w600),
+                          ),
                         ),
                         15.verticalSpace,
-
                       ],
                     ),
                   ),
                 ),
                 DefaultTabController(
-
                     length: 3,
                     child: SingleChildScrollView(
                       child: Column(
@@ -275,16 +276,20 @@ class SportsView extends StackedView<SportsViewModel> {
                               fontWeight: FontWeight.w600,
                               fontSize: 14,
                             ),
-
                             tabs: const [
-                              Tab(text: 'Analytics',),
-                              Tab(text: 'Most Profitable', ),
-                              Tab(text: 'All',),
+                              Tab(
+                                text: 'Analytics',
+                              ),
+                              Tab(
+                                text: 'Most Profitable',
+                              ),
+                              Tab(
+                                text: 'All',
+                              ),
                             ],
                           ),
                           SizedBox(
                             height: MediaQuery.sizeOf(context).height,
-
                             child: TabBarView(
                               children: [
                                 Container(
@@ -300,12 +305,15 @@ class SportsView extends StackedView<SportsViewModel> {
                                   width: MediaQuery.sizeOf(context).width,
                                   child: ListView.separated(
                                     physics: const NeverScrollableScrollPhysics(),
-                                    separatorBuilder: (context,index){
-                                      return const SizedBox(height: 15,);
+                                    separatorBuilder: (context, index) {
+                                      return const SizedBox(
+                                        height: 15,
+                                      );
                                     },
-                                    itemBuilder: (context,index){
+                                    itemBuilder: (context, index) {
                                       return SvgPicture.asset('assets/icons/match_card.svg');
-                                    }, itemCount: 2,
+                                    },
+                                    itemCount: 2,
                                   ),
                                 ),
                                 Container(
@@ -315,15 +323,17 @@ class SportsView extends StackedView<SportsViewModel> {
                                   width: MediaQuery.sizeOf(context).width,
                                   child: ListView.separated(
                                     physics: const NeverScrollableScrollPhysics(),
-                                    separatorBuilder: (context,index){
-                                      return const SizedBox(height: 15,);
+                                    separatorBuilder: (context, index) {
+                                      return const SizedBox(
+                                        height: 15,
+                                      );
                                     },
-                                    itemBuilder: (context,index){
+                                    itemBuilder: (context, index) {
                                       return SvgPicture.asset('assets/icons/match_card.svg');
-                                    }, itemCount: 2,
+                                    },
+                                    itemCount: 2,
                                   ),
                                 ),
-
 
                                 // AnalyticsTab(),
                                 // MostProfitableTab(),
@@ -333,8 +343,7 @@ class SportsView extends StackedView<SportsViewModel> {
                           ),
                         ],
                       ),
-                    )
-                ),
+                    )),
               ],
             ),
           ),

@@ -8,7 +8,6 @@ import '../../../app/app.router.dart';
 class SportsViewModel extends BaseViewModel {
   final NavigationService _navigationService = locator<NavigationService>();
 
-
   void navigateToCreateNewBet() {
     _navigationService.navigateTo(Routes.newBetView);
   }
@@ -17,9 +16,7 @@ class SportsViewModel extends BaseViewModel {
     _navigationService.navigateTo(Routes.sportEventView);
   }
 
- void navigateToWatchingView() {
+  void navigateToWatchingView() {
     _navigationService.navigateTo(Routes.watchingView);
   }
-
-
 }

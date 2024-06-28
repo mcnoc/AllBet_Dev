@@ -21,4 +21,7 @@ class AppIcons {
   static const String live = '$path/live.jpg';
   static const String icSave = '$path/icSave.svg';
   static const String icStart = '$path/icStart.svg';
+
+  //Casino Screen Icons
+  static const String icMagicRedCasino = '$path/icMagicRedCasino.png';
 }
