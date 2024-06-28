@@ -39,6 +39,9 @@ class NavigationView extends StackedView<NavigationViewModel> {
           if (viewModel.currentIndex == 1) {
             viewModel.navigateToNewPokerSessionView();
           }
+          else if(viewModel.currentIndex==2){
+            viewModel.navigateToNewBetView();
+          }
         },
         backgroundColor: AppColors.primaryColor,
         child: Icon(

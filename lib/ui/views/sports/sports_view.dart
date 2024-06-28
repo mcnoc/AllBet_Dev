@@ -1,5 +1,3 @@
-import 'package:all_bet_info/ui/views/sports/new_bet_view.dart';
-import 'package:all_bet_info/ui/views/sports/new_bet_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -131,12 +129,12 @@ class SportsView extends StackedView<SportsViewModel> {
                             scrollDirection: Axis.horizontal,
                               itemCount: 1,
                               itemBuilder: (context,index){
-                            return
-                              InkWell(
+                            return InkWell(
                                   onTap: (){
-                                    viewModel.navigateToCreateNewBet();
+                                    viewModel.navigateToSportsEvents();
                                   },
-                                  child: SvgPicture.asset('assets/icons/NFL.svg',height: 80,))
+                                  child: SvgPicture.asset('assets/icons/NFL.svg',height: 80,)
+                              )
 
                               /*Container(
                               padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
@@ -234,10 +232,15 @@ class SportsView extends StackedView<SportsViewModel> {
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600
                             ),),
-                            Text('View all >',style: GoogleFonts.manrope(
-                              color: Colors.blueAccent,
-                              fontSize: 14,
-                            ),)
+                            InkWell(
+                              onTap: (){
+                                viewModel.navigateToWatchingView();
+                              },
+                              child: Text('View all >',style: GoogleFonts.manrope(
+                                color: Colors.blueAccent,
+                                fontSize: 14,
+                              ),),
+                            )
                           ],
                         ),
                         15.verticalSpace,

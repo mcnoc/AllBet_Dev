@@ -1,7 +1,6 @@
 import 'package:all_bet_info/ui/common/app_colors.dart';
 import 'package:all_bet_info/ui/common/app_icons.dart';
 import 'package:all_bet_info/ui/views/home/home_view.dart';
-import 'package:all_bet_info/ui/views/poker/new_poker_session/new_poker_session_view.dart';
 import 'package:all_bet_info/ui/widgets/appBars/main_screen_custom_appBar.dart';
 import 'package:all_bet_info/ui/widgets/common/all_session_tab_view/all_session_tab_view.dart';
 import 'package:all_bet_info/ui/widgets/common/analytics_tab_view/analytics_tab_view.dart';
