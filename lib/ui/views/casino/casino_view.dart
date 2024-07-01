@@ -37,7 +37,10 @@ class CasinoView extends StackedView<CasinoViewModel> {
                     children: [
                       Text(
                         'Sports',
-                        style: GoogleFonts.manrope(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600),
+                        style: GoogleFonts.manrope(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600),
                       ),
                       CustomImageView(
                         svgPath: AppIcons.settings,
@@ -96,7 +99,8 @@ class CasinoView extends StackedView<CasinoViewModel> {
                       children: List.generate(
                         3,
                         (index) => Padding(
-                          padding: EdgeInsets.only(left: index == 0 ? 24.w : 0.0, right: 16.w),
+                          padding: EdgeInsets.only(
+                              left: index == 0 ? 24.w : 0.0, right: 16.w),
                           child: const PockerNearYouWidget(),
                         ),
                       ),
@@ -120,7 +124,8 @@ class CasinoView extends StackedView<CasinoViewModel> {
                       children: List.generate(
                         3,
                         (index) => Padding(
-                          padding: EdgeInsets.only(left: index == 0 ? 24.w : 0.0, right: 16.w),
+                          padding: EdgeInsets.only(
+                              left: index == 0 ? 24.w : 0.0, right: 16.w),
                           child: Container(
                             width: 116.w,
                             decoration: BoxDecoration(

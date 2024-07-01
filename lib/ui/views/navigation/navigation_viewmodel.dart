@@ -65,6 +65,10 @@ class NavigationViewModel extends IndexTrackingViewModel {
   }
 
   void navigateToNewBetView() {
-    _navigationService.navigateToNewBetView();
+    // _navigationService.navigateToNewBetView();
+  }
+
+  void navigateToNewCasinoSessionView() {
+    _navigationService.navigateToNewCasinoSessionView();
   }
 }

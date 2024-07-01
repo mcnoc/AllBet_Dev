@@ -10,6 +10,7 @@ import 'package:all_bet_info/ui/views/poker/poker_view.dart';
 import 'package:all_bet_info/ui/views/poker/new_poker_session/new_poker_session_view.dart';
 import 'package:all_bet_info/ui/views/sports/sports_view.dart';
 import 'package:all_bet_info/ui/views/casino/casino_view.dart';
+import 'package:all_bet_info/ui/views/new_casino_session/new_casino_session_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -21,8 +22,8 @@ import 'package:all_bet_info/ui/views/casino/casino_view.dart';
     MaterialRoute(page: PokerView),
     MaterialRoute(page: NewPokerSessionView),
     MaterialRoute(page: SportsView),
-    MaterialRoute(page: SportsView),
     MaterialRoute(page: CasinoView),
+    MaterialRoute(page: NewCasinoSessionView),
 // @stacked-route
   ],
   dependencies: [

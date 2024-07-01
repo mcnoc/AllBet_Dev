@@ -31,7 +31,10 @@ class SportsView extends StackedView<SportsViewModel> {
                   children: [
                     Text(
                       'Sports',
-                      style: GoogleFonts.manrope(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600),
+                      style: GoogleFonts.manrope(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600),
                     ),
                     SvgPicture.asset('assets/icons/settings.svg')
                   ],
@@ -46,19 +49,24 @@ class SportsView extends StackedView<SportsViewModel> {
                       color: Colors.grey,
                     ),
                     hintText: "Search",
-                    hintStyle: GoogleFonts.manrope(fontWeight: FontWeight.w400, fontSize: 16),
+                    hintStyle: GoogleFonts.manrope(
+                        fontWeight: FontWeight.w400, fontSize: 16),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: Colors.white)),
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.white)),
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: Colors.white)),
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.white)),
                     focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: Colors.white)),
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.white)),
                   ),
                 ),
                 20.verticalSpace,
                 Text(
                   'Best offers',
-                  style: GoogleFonts.manrope(fontSize: 16, fontWeight: FontWeight.w600),
+                  style: GoogleFonts.manrope(
+                      fontSize: 16, fontWeight: FontWeight.w600),
                 ),
                 // 10.verticalSpace,
                 SizedBox(
@@ -87,7 +95,8 @@ class SportsView extends StackedView<SportsViewModel> {
                 Container(
                   alignment: Alignment.center,
                   width: MediaQuery.sizeOf(context).width,
-                  child: const Image(image: AssetImage('assets/images/dots.png')),
+                  child:
+                      const Image(image: AssetImage('assets/images/dots.png')),
                 ),
                 15.verticalSpace,
                 Container(
@@ -96,7 +105,9 @@ class SportsView extends StackedView<SportsViewModel> {
                   width: MediaQuery.sizeOf(context).width,
                   alignment: Alignment.topLeft,
                   decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10)),
                       color: Color(0xff111214)),
                   child: SingleChildScrollView(
                     physics: const NeverScrollableScrollPhysics(),
@@ -106,7 +117,8 @@ class SportsView extends StackedView<SportsViewModel> {
                         15.verticalSpace,
                         Text(
                           'Search odds',
-                          style: GoogleFonts.manrope(fontSize: 16, fontWeight: FontWeight.w600),
+                          style: GoogleFonts.manrope(
+                              fontSize: 16, fontWeight: FontWeight.w600),
                         ),
                         15.verticalSpace,
                         SizedBox(
@@ -155,7 +167,8 @@ class SportsView extends StackedView<SportsViewModel> {
                         Container(
                           alignment: Alignment.center,
                           width: MediaQuery.sizeOf(context).width,
-                          child: const Image(image: AssetImage('assets/images/dots.png')),
+                          child: const Image(
+                              image: AssetImage('assets/images/dots.png')),
                         ),
                         20.verticalSpace,
                         Row(
@@ -164,7 +177,8 @@ class SportsView extends StackedView<SportsViewModel> {
                           children: [
                             Text(
                               'Bookmakers near you',
-                              style: GoogleFonts.manrope(fontSize: 16, fontWeight: FontWeight.w600),
+                              style: GoogleFonts.manrope(
+                                  fontSize: 16, fontWeight: FontWeight.w600),
                             ),
                             Text(
                               'View all >',
@@ -221,7 +235,8 @@ class SportsView extends StackedView<SportsViewModel> {
                         Container(
                           alignment: Alignment.center,
                           width: MediaQuery.sizeOf(context).width,
-                          child: const Image(image: AssetImage('assets/images/dots.png')),
+                          child: const Image(
+                              image: AssetImage('assets/images/dots.png')),
                         ),
                         15.verticalSpace,
                         Row(
@@ -230,7 +245,8 @@ class SportsView extends StackedView<SportsViewModel> {
                           children: [
                             Text(
                               'Watching',
-                              style: GoogleFonts.manrope(fontSize: 16, fontWeight: FontWeight.w600),
+                              style: GoogleFonts.manrope(
+                                  fontSize: 16, fontWeight: FontWeight.w600),
                             ),
                             InkWell(
                               onTap: () {
@@ -254,7 +270,9 @@ class SportsView extends StackedView<SportsViewModel> {
                           child: Text(
                             'View all',
                             style: GoogleFonts.manrope(
-                                color: Colors.blueAccent, fontSize: 16, fontWeight: FontWeight.w600),
+                                color: Colors.blueAccent,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600),
                           ),
                         ),
                         15.verticalSpace,
@@ -296,40 +314,47 @@ class SportsView extends StackedView<SportsViewModel> {
                                   color: Colors.black,
                                   height: MediaQuery.sizeOf(context).height,
                                   width: MediaQuery.sizeOf(context).width,
-                                  child: SvgPicture.asset('assets/icons/trades.svg'),
+                                  child: SvgPicture.asset(
+                                      'assets/icons/trades.svg'),
                                 ),
                                 Container(
-                                  padding: const EdgeInsets.symmetric(vertical: 15),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 15),
                                   color: Colors.black,
                                   height: MediaQuery.sizeOf(context).height,
                                   width: MediaQuery.sizeOf(context).width,
                                   child: ListView.separated(
-                                    physics: const NeverScrollableScrollPhysics(),
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
                                     separatorBuilder: (context, index) {
                                       return const SizedBox(
                                         height: 15,
                                       );
                                     },
                                     itemBuilder: (context, index) {
-                                      return SvgPicture.asset('assets/icons/match_card.svg');
+                                      return SvgPicture.asset(
+                                          'assets/icons/match_card.svg');
                                     },
                                     itemCount: 2,
                                   ),
                                 ),
                                 Container(
-                                  padding: const EdgeInsets.symmetric(vertical: 15),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 15),
                                   color: Colors.black,
                                   height: MediaQuery.sizeOf(context).height,
                                   width: MediaQuery.sizeOf(context).width,
                                   child: ListView.separated(
-                                    physics: const NeverScrollableScrollPhysics(),
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
                                     separatorBuilder: (context, index) {
                                       return const SizedBox(
                                         height: 15,
                                       );
                                     },
                                     itemBuilder: (context, index) {
-                                      return SvgPicture.asset('assets/icons/match_card.svg');
+                                      return SvgPicture.asset(
+                                          'assets/icons/match_card.svg');
                                     },
                                     itemCount: 2,
                                   ),
