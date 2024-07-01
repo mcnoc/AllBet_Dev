@@ -24,4 +24,12 @@ class AppIcons {
 
   //Casino Screen Icons
   static const String icMagicRedCasino = '$path/icMagicRedCasino.png';
+  static const String hexagoneStar = '$path/hexagoneStar.svg';
+  static const String insta = '$path/insta.svg';
+  static const String facebook = '$path/facebook.svg';
+  static const String twiterX = '$path/twiterX.svg';
+  static const String tikTok = '$path/tikTok.svg';
+  static const String share = '$path/share.svg';
+  // static const String hexagoneStar = '$path/hexagoneStar.svg';
+  // static const String hexagoneStar = '$path/hexagoneStar.svg';
 }

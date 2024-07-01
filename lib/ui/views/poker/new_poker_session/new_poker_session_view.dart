@@ -50,10 +50,7 @@ class NewPokerSessionView extends StackedView<NewPokerSessionViewModel> {
                           children: [
                             Text(
                               "Session Type",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall
-                                  ?.copyWith(
+                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                     fontWeight: FontWeight.w600,
                                   ),
                             ),
@@ -99,15 +96,12 @@ class NewPokerSessionView extends StackedView<NewPokerSessionViewModel> {
 
                             Text(
                               "Game",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall
-                                  ?.copyWith(
+                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                     fontWeight: FontWeight.w600,
                                   ),
                             ),
                             12.verticalSpace,
-                            GameDropDown(
+                            CustomDropDown(
                               dropdownValue: viewModel.dropdownValue,
                               gameList: viewModel.gameList,
                               onChanged: (value) {
@@ -118,10 +112,7 @@ class NewPokerSessionView extends StackedView<NewPokerSessionViewModel> {
 
                             Text(
                               "Place",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall
-                                  ?.copyWith(
+                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                     fontWeight: FontWeight.w600,
                                   ),
                             ),
@@ -136,10 +127,7 @@ class NewPokerSessionView extends StackedView<NewPokerSessionViewModel> {
 
                             Text(
                               "Bankroll",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall
-                                  ?.copyWith(
+                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                     fontWeight: FontWeight.w600,
                                   ),
                             ),
@@ -163,17 +151,12 @@ class NewPokerSessionView extends StackedView<NewPokerSessionViewModel> {
                             TabBar(
                               unselectedLabelColor: const Color(0xFFB8C0CA),
                               indicatorColor: AppColors.whiteColor,
-                              labelStyle: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall
-                                  ?.copyWith(
+                              labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
                                     fontWeight: FontWeight.w600,
                                   ),
                               indicatorSize: TabBarIndicatorSize.tab,
-                              indicatorPadding:
-                                  EdgeInsets.symmetric(horizontal: 10.w),
-                              dividerColor:
-                                  AppColors.whiteColor.withOpacity(0.1),
+                              indicatorPadding: EdgeInsets.symmetric(horizontal: 10.w),
+                              dividerColor: AppColors.whiteColor.withOpacity(0.1),
                               tabs: const [
                                 Tab(
                                   text: 'Limit type',
@@ -317,8 +300,7 @@ class CustomRadioButton extends StatelessWidget {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: const Color(0xFF313439),
-          border: Border.all(
-              color: AppColors.whiteColor.withOpacity(0.1), width: 1),
+          border: Border.all(color: AppColors.whiteColor.withOpacity(0.1), width: 1),
         ),
         child: value == groupValue
             ? Center(

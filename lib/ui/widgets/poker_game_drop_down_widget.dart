@@ -1,16 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class GameDropDown extends StatelessWidget {
+class CustomDropDown extends StatelessWidget {
   final String dropdownValue;
   final List<String> gameList;
   final void Function(String?)? onChanged;
-  const GameDropDown({
+  const CustomDropDown({
     required this.dropdownValue,
     required this.gameList,
     required this.onChanged,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class GameDropDown extends StatelessWidget {
       child: DropdownButton<String>(
         isExpanded: true,
         value: dropdownValue,
-        icon: const Icon(Icons.arrow_downward),
+        icon: const Icon(CupertinoIcons.chevron_forward),
         elevation: 16,
         style: Theme.of(context).textTheme.bodySmall?.copyWith(
               fontWeight: FontWeight.w600,

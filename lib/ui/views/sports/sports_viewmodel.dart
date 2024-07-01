@@ -9,14 +9,14 @@ class SportsViewModel extends BaseViewModel {
   final NavigationService _navigationService = locator<NavigationService>();
 
   void navigateToCreateNewBet() {
-    _navigationService.navigateTo(Routes.newBetView);
+    // _navigationService.navigateTo(Routes.newBetView);
   }
 
   void navigateToSportsEvents() {
-    _navigationService.navigateTo(Routes.sportEventView);
+    // _navigationService.navigateTo(Routes.sportEventView);
   }
 
   void navigateToWatchingView() {
-    _navigationService.navigateTo(Routes.watchingView);
+    // _navigationService.navigateTo(Routes.watchingView);
   }
 }

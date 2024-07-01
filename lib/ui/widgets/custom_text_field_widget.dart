@@ -4,15 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomTextFromFiield extends StatelessWidget {
   final Widget? prefixIcon;
   final String? hintText;
+  final int? maxLines;
   const CustomTextFromFiield({
     this.prefixIcon,
     this.hintText,
+    this.maxLines = 1,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
